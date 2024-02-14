@@ -1,0 +1,19 @@
+# https://zenn.dev/t_ume/scraps/22c810de1c1a4c
+# https://zenn.dev/pkkudo/articles/b2d40a5b8f42c8
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  annotations:
+    # デフォルトにしない場合は不要
+    storageclass.kubernetes.io/is-default-class: "true"
+  name: nfs-csi
+provisioner: nfs.csi.k8s.io
+parameters:
+  server: 192.168.1.23
+  share: /srv/nfs
+  mountPermissions: "777"
+reclaimPolicy: Delete
+volumeBindingMode: Immediate
+mountOptions:
+  - hard
+  - nfsvers=4.2

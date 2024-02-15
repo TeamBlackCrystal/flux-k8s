@@ -23,5 +23,5 @@ spec:
         name: prometheus-community
       version: 25.11.1
       valuesFiles:
-        - values-prometheus.yaml
+        - ./values-prometheus.yaml
   interval: 1m0s

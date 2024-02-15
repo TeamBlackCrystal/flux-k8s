@@ -23,5 +23,5 @@ spec:
         name: prometheus-community
       version: 25.11.1
       valuesFiles:
-        - ./values-prometheus.yaml
+        - https://github.com/TeamBlackCrystal/flux-k8s/raw/master/clusters/my-cluster/prometheus/values-prometheus.yaml
   interval: 1m0s

@@ -14,6 +14,10 @@ metadata:
   name: prometheus
   namespace: prometheus
 spec:
+  valuesFrom:
+    - kind: ConfigMap
+      name: prometheus-values
+      valuesKey: values-prometheus.yaml
   chart:
     spec:
       chart: prometheus
@@ -22,6 +26,4 @@ spec:
         kind: HelmRepository
         name: prometheus-community
       version: 25.11.1
-      valuesFiles:
-        - https://github.com/TeamBlackCrystal/flux-k8s/raw/master/clusters/my-cluster/prometheus/values-prometheus.yaml
   interval: 1m0s
